@@ -6,7 +6,7 @@ STEMS="libevent libight libyaml-cpp"
 rm -rf dist/*
 install -d dist/lib
 for NAME in $STEMS; do
-    for EXT in .a .dylib; do
+    for EXT in .a; do
         SOURCES=""
         for DIR in build/*/*/lib; do
             SOURCES="$SOURCES $DIR/$NAME$EXT"

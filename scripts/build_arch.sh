@@ -29,7 +29,8 @@ export CXXFLAGS="-isysroot ${DEVELOPER}/Platforms/${PLATFORM}.platform/Developer
 (
     cd libight
     test -x ./configure || autoreconf -i
-    ./configure --with-libevent=builtin \
+    ./configure --disable-shared \
+                --with-libevent=builtin \
                 --with-libyaml-cpp=builtin \
                 --with-libboost=builtin \
                 --prefix=/ \
