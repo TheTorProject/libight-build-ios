@@ -9,6 +9,10 @@ fi
 PLATFORM=$1
 ARCH=$2
 
+if [ "$PLATFORM" = "iPhoneOS" ]; then
+    EXTRA_CONFIG="--host=arm-apple-darwin14 --target=arm-apple-darwin14"
+fi
+
 DEVELOPER=$(xcode-select -print-path)
 REPOROOT=$(pwd)
 MINIOSVERSION="6.1"
@@ -28,7 +32,8 @@ export CXXFLAGS="-isysroot ${DEVELOPER}/Platforms/${PLATFORM}.platform/Developer
     ./configure --with-libevent=builtin \
                 --with-libyaml-cpp=builtin \
                 --with-libboost=builtin \
-                --prefix=/
+                --prefix=/ \
+                $EXTRA_CONFIG
     make -j4
     make install V=0 DESTDIR=$REPOROOT/build/${PLATFORM}/${ARCH}
     make distclean
