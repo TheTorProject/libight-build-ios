@@ -24,10 +24,11 @@ export CXXFLAGS="-isysroot ${DEVELOPER}/Platforms/${PLATFORM}.platform/Developer
 
 (
     cd libight
-    autoreconf -i
+    test -x ./configure || autoreconf -i
     ./configure --with-libevent=builtin \
                 --with-libyaml-cpp=builtin \
-                --with-libboost=builtin
+                --with-libboost=builtin \
+                --prefix=/
     make -j4
     make install V=0 DESTDIR=$REPOROOT/build/${PLATFORM}/${ARCH}
     make distclean
