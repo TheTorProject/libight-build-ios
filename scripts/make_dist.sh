@@ -7,6 +7,7 @@ STEMS="libevent libight libyaml-cpp"
 DIRS="$DIRS build/iPhoneSimulator/i386/lib"
 DIRS="$DIRS build/iPhoneSimulator/x86_64/lib"
 DIRS="$DIRS build/iPhoneOS/armv7/lib"
+DIRS="$DIRS build/iPhoneOS/armv7s/lib"
 DIRS="$DIRS build/iPhoneOS/arm64/lib"
 
 rm -rf dist/*
