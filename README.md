@@ -1,16 +1,36 @@
-# Libight build iOS
+Libight build iOS
+=================
 
-This repository contains the code to cross-compile libight for iOS. Provided
-that you have Xcode installed, it should suffice to run
+Libight is an experimental library that provides common functionalities
+useful to implement open measurement tools on mobile platforms.
+
+This repository contains the code to cross-compile libight for iOS.
+
+To build libight for iOS you need to have a MacOSX 10.9.5 or higher system
+with Xcode installed (older systems may be able to compile libight but
+this has not been tested by us).
+
+How to clone the repository
+---------------------------
+
+To clone properly libight repository, make sure that you specify the
+`--recursive` command line flag, as in:
+
+    git clone --recursive https://github.com/TheTorProject/libight-build-ios
+
+Such flag tells git to clone not only the libight repository, but also
+the [submodules](http://git-scm.com/docs/git-submodule) contained therein.
+
+Alternatively, once you have cloned the repository, you can checkout all
+the submodules using:
+
+    git submodule update --init --recursive
+
+How to build it
+---------------
+
+It should suffice to run
 
     ./build.sh
 
 to have static library and headers compiled below the `dist` directory.
-
-## Setup
-
-Run:
-    
-    git submodule update --init
-    cd libight/
-    git submodule update --init
