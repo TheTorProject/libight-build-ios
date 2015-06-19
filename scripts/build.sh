@@ -6,4 +6,4 @@
 ./scripts/build_arch.sh iPhoneOS armv7s
 ./scripts/build_arch.sh iPhoneOS arm64
 
-./scripts/populate_dist.sh
+./scripts/build_frameworks.sh

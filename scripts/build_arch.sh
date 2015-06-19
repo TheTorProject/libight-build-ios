@@ -39,3 +39,12 @@ export CXXFLAGS="-isysroot ${DEVELOPER}/Platforms/${PLATFORM}.platform/Developer
     make install V=0 DESTDIR=$REPOROOT/build/${PLATFORM}/${ARCH}
     make distclean
 )
+
+# Build libboost.a stub necessary to create boost.framework
+install -d $REPOROOT/build/${PLATFORM}/${ARCH}/lib
+$CXX $CPPFLAGS $CXXFLAGS -c boost/boost.cpp \
+  -o $REPOROOT/build/${PLATFORM}/${ARCH}/lib/boost.o
+ar rv $REPOROOT/build/${PLATFORM}/${ARCH}/lib/libboost.a \
+  $REPOROOT/build/${PLATFORM}/${ARCH}/lib/boost.o
+rm $REPOROOT/build/${PLATFORM}/${ARCH}/lib/boost.o
+ranlib $REPOROOT/build/${PLATFORM}/${ARCH}/lib/libboost.a
