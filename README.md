@@ -1,7 +1,6 @@
-Libight build iOS
-=================
+# Building MeasurementKit for iOS
 
-Libight is an experimental library that provides common functionalities
+MeasurementKit is an experimental library that provides common functionalities
 useful to implement open measurement tools on mobile platforms.
 
 This repository contains the code to cross-compile MeasurementKit for iOS.
@@ -10,8 +9,7 @@ To build for iOS you need to have a MacOSX 10.9.5 or higher system
 with Xcode installed (older systems may be able to compile it but
 this has not been tested by us).
 
-How to clone the repository
----------------------------
+## How to clone the repository
 
 To clone properly MeasurementKit repository, make sure that you specify the
 `--recursive` command line flag, as in:
@@ -26,8 +24,7 @@ the submodules using:
 
     git submodule update --init --recursive
 
-How to build it
----------------
+## How to build MeasurementKit for iOS
 
 It should suffice to run
 
