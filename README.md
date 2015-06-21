@@ -26,8 +26,12 @@ the submodules using:
 
 ## How to build MeasurementKit for iOS
 
-It should suffice to run
+The repository contains empty frameworks for MeasurementKit and for
+all its dependencies. You just need to run
 
-    ./build.sh
+    ./scripts/build.sh
 
-to have static library and headers compiled below the `dist` directory.
+to compile everything and fill all the empty framework directories
+with static libraries for iPhoneOS and iPhoneSimulator as well as with
+all the required headers. You can then copy these frameworks inside
+you project and import them in Xcode to integrate with MeasurementKit.
