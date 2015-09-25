@@ -51,3 +51,22 @@ git commit -am "Update measurement-kit subrepo"
 ```
 
 Then push the branch and open a pull request.
+
+## How to update to a specific branch for testing purposes
+
+Assume `feature/foobar` is a branch you want to test. Then do these steps.
+
+```
+git fetch
+git submodule deinit -f .
+git checkout feature/foobar
+git submodule update --init --recursive 
+```
+
+Then test the branch. Once you're done return to master like this.
+
+```
+git submodule deinit -f .
+git checkout master
+git submodule update --init --recursive
+```
