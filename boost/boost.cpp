@@ -3,4 +3,8 @@
  * we need to make a nearly-empty library.
  */
 
-namespace boost {}
+namespace boost {
+namespace unused {
+unsigned long long unused = 0;
+}
+}

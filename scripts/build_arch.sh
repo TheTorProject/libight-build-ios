@@ -15,8 +15,8 @@ fi
 
 DEVELOPER=$(xcode-select -print-path)
 REPOROOT=$(pwd)
-MINIOSVERSION="6.1"
-SDKVERSION="8.4"
+MINIOSVERSION="7.1"
+SDKVERSION="9.0"
 
 export PATH="${DEVELOPER}/Toolchains/XcodeDefault.xctoolchain/usr/bin/:${DEVELOPER}/Platforms/${PLATFORM}.platform/Developer/usr/bin/:${DEVELOPER}/Toolchains/XcodeDefault.xctoolchain/usr/bin:${DEVELOPER}/usr/bin:${PATH}"
 
@@ -35,7 +35,7 @@ export CXXFLAGS="-isysroot ${DEVELOPER}/Platforms/${PLATFORM}.platform/Developer
                 --with-libboost=builtin \
                 --prefix=/ \
                 $EXTRA_CONFIG
-    make -j4
+    make -j4 V=0
     make install V=0 DESTDIR=$REPOROOT/build/${PLATFORM}/${ARCH}
     make distclean
 )

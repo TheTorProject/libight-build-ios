@@ -2,11 +2,11 @@
 
 rm -rf boost.framework/*
 rm -rf event2.framework/*
-rm -rf ight.framework/*
+rm -rf measurement_kit.framework/*
 rm -rf yaml-cpp.framework/*
 
 # XXX Copying x86 headers -- has this implications (e.g., config.h)?
-for N in boost event2 ight yaml-cpp; do
+for N in boost event2 measurement_kit yaml-cpp; do
     cp -Rp build/iPhoneSimulator/i386/include/$N $N.framework/Headers
 done
 
@@ -31,12 +31,12 @@ lipo -create -output event2_pthreads.framework/event2_pthreads \
   build/iPhoneSimulator/i386/lib/libevent_pthreads.a \
   build/iPhoneSimulator/x86_64/lib/libevent_pthreads.a
 
-lipo -create -output ight.framework/ight \
-  build/iPhoneOS/arm64/lib/libight.a \
-  build/iPhoneOS/armv7s/lib/libight.a \
-  build/iPhoneOS/armv7/lib/libight.a \
-  build/iPhoneSimulator/i386/lib/libight.a \
-  build/iPhoneSimulator/x86_64/lib/libight.a
+lipo -create -output measurement_kit.framework/measurement_kit \
+  build/iPhoneOS/arm64/lib/libmeasurement_kit.a \
+  build/iPhoneOS/armv7s/lib/libmeasurement_kit.a \
+  build/iPhoneOS/armv7/lib/libmeasurement_kit.a \
+  build/iPhoneSimulator/i386/lib/libmeasurement_kit.a \
+  build/iPhoneSimulator/x86_64/lib/libmeasurement_kit.a
 
 lipo -create -output yaml-cpp.framework/yaml-cpp \
   build/iPhoneOS/arm64/lib/libyaml-cpp.a \
