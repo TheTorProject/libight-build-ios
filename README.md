@@ -35,3 +35,19 @@ to compile everything and fill all the empty framework directories
 with static libraries for iPhoneOS and iPhoneSimulator as well as with
 all the required headers. You can then copy these frameworks inside
 you project and import them in Xcode to integrate with MeasurementKit.
+
+## How to update to the latest version of MeasurementKit
+
+Create a work branch. Then execute these steps.
+
+```
+cd measurement-kit
+git submodule deinit -f .
+git checkout master
+git pull
+git submodule update --init --recursive
+cd ..
+git commit -am "Update measurement-kit subrepo"
+```
+
+Then push the branch and open a pull request.
