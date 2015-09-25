@@ -35,7 +35,7 @@ export CXXFLAGS="-isysroot ${DEVELOPER}/Platforms/${PLATFORM}.platform/Developer
                 --with-libboost=builtin \
                 --prefix=/ \
                 $EXTRA_CONFIG
-    make -j4
+    make -j4 V=0
     make install V=0 DESTDIR=$REPOROOT/build/${PLATFORM}/${ARCH}
     make distclean
 )
