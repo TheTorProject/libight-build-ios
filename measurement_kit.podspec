@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   CMD
   s.platform = :ios, "9.0"
   s.source_files = "measurement-kit/include/measurement_kit/**"
-  s.header_dir = "measurement-kit/include/measurement_kit/**"
+  s.header_mappings_dir = "measurement-kit/include/measurement_kit/**"
   s.vendored_libraries = "libraries/**"
 end
