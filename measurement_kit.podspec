@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
     ./scripts/build.sh
   CMD
   s.platform = :ios, "9.0"
-  s.source_files = "measurement-kit/include/measurement_kit/**"
+  s.source_files = "measurement-kit/include/measurement_kit/**/*.{h,hpp}"
   s.header_dir = "measurement-kit"
   s.header_mappings_dir = "measurement-kit/include/measurement_kit"
   s.vendored_libraries = "libraries/**"
