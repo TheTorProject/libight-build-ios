@@ -13,6 +13,6 @@ Pod::Spec.new do |s|
     ./scripts/build.sh
   CMD
   s.platform = :ios, "9.0"
-  s.source_files = "measurement-kit/src/**/*.{hpp,h,cpp}"
-  s.vendored_libraries = "measurement_kit.framework/measurement_kit"
+  s.source_files = "measurement-kit/include/measurement-kit/**/*.{hpp,h,cpp}"
+  s.vendored_libraries = "*.framework"
 end
